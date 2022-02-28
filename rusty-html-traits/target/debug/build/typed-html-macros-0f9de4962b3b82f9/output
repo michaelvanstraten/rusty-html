@@ -1,3 +1,0 @@
-processing file `/Users/michaelvanstraten/.cargo/registry/src/github.com-1ecc6299db9ec823/typed-html-macros-0.2.2/src/grammar.lalrpop`
-cargo:rustc-cfg=can_join_spans
-cargo:rustc-cfg=can_show_location_of_runtime_parse_error
