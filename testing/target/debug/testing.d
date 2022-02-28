@@ -1,1 +1,0 @@
-/Users/michaelvanstraten/Codebase/rusty-html/testing/target/debug/testing: /Users/michaelvanstraten/Codebase/rusty-html/src/lib.rs /Users/michaelvanstraten/Codebase/rusty-html/src/traits.rs /Users/michaelvanstraten/Codebase/rusty-html/testing/src/main.rs

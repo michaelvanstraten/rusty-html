@@ -1,1 +1,0 @@
-/Users/michaelvanstraten/Codebase/rusty-html/rusty-html-traits/target/debug/librusty_html_traits.rlib: /Users/michaelvanstraten/Codebase/rusty-html/rusty-html-traits/src/lib.rs /Users/michaelvanstraten/Codebase/rusty-html/src/lib.rs
