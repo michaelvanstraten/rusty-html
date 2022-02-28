@@ -1,0 +1,15 @@
+[package]
+name = "rusty-html"
+version = "0.1.0"
+edition = "2021"
+authors = ["Michael van Straten"]
+description = "This crate allows for Jsx html inline like syntax in rust"
+repository = "https://github.com/michaelvanstraten/rusty-html"
+license = "MIT"
+
+[dependencies]
+quote = "1.0.10"
+proc-macro2 = "1.0.34"
+
+[lib]
+proc-macro = true
