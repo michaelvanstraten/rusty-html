@@ -1,0 +1,11 @@
+[package]
+name = "rusty-html-derive"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+quote = "1.0.10"
+proc-macro2 = "1.0.34"
+
+[lib]
+proc-macro = true

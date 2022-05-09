@@ -1,4 +1,3 @@
-/target
+**/target
 .DS_STORE
-Cargo.lock
-/rusty-html-traits/target
+**/Cargo.lock
