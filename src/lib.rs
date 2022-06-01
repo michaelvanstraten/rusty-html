@@ -1,4 +1,9 @@
-pub use rusty_html_derive::html;
+//! # rusty-html
+//! 
+//! This crate allows for Jsx html inline like syntax in rust
+
+
+pub use rusty_html_macros::html;
 
 pub trait HTMLify {
     fn htmlify(&self) -> String;
@@ -16,7 +21,7 @@ macro_rules! impl_for {
     }
 }
 
-impl_for!{
+impl_for! {
     i8,
     i16,
     i32,
@@ -42,42 +47,13 @@ impl HTMLify for String {
     }
 }
 
-impl<T : HTMLify> HTMLify for Vec<T> {
+impl<T: HTMLify> HTMLify for Vec<T> {
     fn htmlify(&self) -> String {
         let mut new_string = String::new();
         for s in self {
             new_string.push(' ');
             new_string.push_str(&s.htmlify())
-        };
+        }
         new_string
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::html;
-    use super::HTMLify;
-    #[test]
-    fn vec() {
-        let html = html!{
-            <html>
-                <head>
-                <title>Page Title</title>
-                </head>
-                <body>
-                {
-                    vec!["ad", "sdf", "sdfsdf"].into_iter().map(|s| {
-                            html!{
-                                <p>{s}</p>
-                            }
-                        }
-                    ).collect::<Vec<String>>()
-                }
-                <h1>sfsdf</h1>
-                <p>My first paragraph.</p>
-                </body>
-            </html>
-        };
-        println!("{}", html);
     }
 }
