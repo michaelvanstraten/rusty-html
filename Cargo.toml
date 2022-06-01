@@ -8,4 +8,4 @@ repository = "https://github.com/michaelvanstraten/rusty-html"
 license = "MIT"
 
 [dependencies]
-rusty-html-macros = { path = "./macros" }
+rusty-html-macros = "^0.1"
