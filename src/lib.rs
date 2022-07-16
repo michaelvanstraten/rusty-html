@@ -1,7 +1,36 @@
-//! # rusty-html
-//! 
-//! This crate allows for Jsx html inline like syntax in rust
+/*!
+ This crate allows for Jsx html inline like syntax in rust
 
+ ## Example
+```rust
+use rusty_html::html;
+
+fn main() {
+    let html = html! {
+        <html>
+            <head>
+            <title>Page Title</title>
+            </head>
+            <body>
+            {
+                vec!["ad", "sdf", "sdfsdf"].into_iter().map(|s| {
+                        html!{
+                            <p>{s}</p>
+                        }
+                    }
+                ).collect::<Vec<String>>()
+            }
+            <h1>sfsdf</h1>
+            <p>My first paragraph.</p>
+            </body>
+        </html>
+    };
+    println!("{}", html);
+}
+```
+ */
+
+#![feature(fn_traits)]
 
 pub use rusty_html_macros::html;
 
@@ -56,4 +85,17 @@ impl<T: HTMLify> HTMLify for Vec<T> {
         }
         new_string
     }
+}
+
+#[cfg(test)]
+#[test]
+fn test() {
+    let a = "Hello";
+    let b = a.to_owned();
+
+    let c = |n: String| {
+        format!("{a}, {n}")
+    };
+
+    println!("{}", c.call(("Peter".to_owned(),)));
 }

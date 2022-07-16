@@ -1,6 +1,6 @@
 [package]
 name = "rusty-html"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Michael van Straten"]
 description = "This crate allows for Jsx html inline like syntax in rust"
