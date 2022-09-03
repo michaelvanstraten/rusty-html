@@ -43,7 +43,7 @@ impl Iterator for Parser {
                     } {
                         quote! {
                             html.push_str(#html);
-                        }
+                        } 
                     } else {
                         PM2TokenStream::new()
                     };
