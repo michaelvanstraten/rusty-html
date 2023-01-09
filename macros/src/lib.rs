@@ -1,24 +1,27 @@
-#![feature(proc_macro_span)]
-#![feature(proc_macro_span_shrink)]
-#![feature(extend_one)]
+#![cfg_attr(feature = "inline-html", feature(proc_macro_span))]
+// #![cfg_attr(feature = "better-errors", feature(proc_macro_diagnostic))]
 
-mod parser;
-use parser::Parser;
+mod inline_html;
+
+mod grammar;
+mod helper_macros;
+mod render_function;
+mod template;
 
 use proc_macro::TokenStream;
-use quote::quote;
+use syn::parse_macro_input;
+use syn::AttributeArgs;
+use syn::DeriveInput;
+
+#[proc_macro_attribute]
+pub fn template(attribute_stream: TokenStream, input_stream: TokenStream) -> TokenStream {
+    template::build_template(
+        parse_macro_input!(input_stream as DeriveInput),
+        parse_macro_input!(attribute_stream as AttributeArgs),
+    )
+}
 
 #[proc_macro]
-pub fn html(input: TokenStream) -> TokenStream {
-    match Parser::new(input) {
-        Some(parser) => quote! {
-            {
-                let mut html = String::new();
-                #(#parser)*
-                html
-            }
-        }
-        .into(),
-        None => TokenStream::new(),
-    }
+pub fn html(input_stream: TokenStream) -> TokenStream {
+    inline_html::build_render_scope(input_stream)
 }

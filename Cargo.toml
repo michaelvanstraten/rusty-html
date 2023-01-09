@@ -1,3 +1,6 @@
+[workspace]
+members = ["macros", "frontend"]
+
 [package]
 name = "rusty-html"
 version = "0.1.2"
@@ -7,5 +10,8 @@ description = "This crate allows for Jsx html inline like syntax in rust"
 repository = "https://github.com/michaelvanstraten/rusty-html"
 license = "MIT"
 
+[features]
+inline-html = ["rusty-html-macros/inline-html"]
+
 [dependencies]
-rusty-html-macros = "^0.1"
+rusty-html-macros = { path = "./macros/"}

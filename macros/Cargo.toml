@@ -8,8 +8,18 @@ repository = "https://github.com/michaelvanstraten/rusty-html"
 license = "MIT"
 
 [dependencies]
-quote = "1.0.10"
+pest = "2.4.0"
+pest_derive = "2.4.0"
+
 proc-macro2 = "1.0.34"
+syn = { version = "1.0.102", features = ["full"] }
+quote = "1.0.21"
 
 [lib]
 proc-macro = true
+
+[features]
+default = ["inline-html", "better-errors"]
+inline-html = []
+better-errors = []
+

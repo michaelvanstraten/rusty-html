@@ -8,15 +8,10 @@ fn main() {
             </head>
             <body>
             {
-                vec!["ad", "sdf", "sdfsdf"].into_iter().map(|s| {
-                        html!{
-                            <p>{s}</p>
-                        }
-                    }
-                ).collect::<Vec<String>>()
+                for name in ["Tom", "Anna", "Bob"] {
+                    <p>{name}</p>
+                }
             }
-            <h1>sfsdf</h1>
-            <p>My first paragraph.</p>
             </body>
         </html>
     };
