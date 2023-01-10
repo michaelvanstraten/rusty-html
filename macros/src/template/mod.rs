@@ -16,7 +16,7 @@ use crate::grammar::Grammar;
 use crate::grammar::Rule;
 use crate::helper_macros::err_to_token_stream;
 use crate::helper_macros::syn_err_to_token_stream;
-use crate::render_function::build_render_function_body;
+use crate::build::build_render_function_body;
 use crate::template::arguments::TemplateArgs;
 
 pub(crate) fn build_template(input: DeriveInput, mut attributes: AttributeArgs) -> TokenStream {
@@ -51,6 +51,7 @@ pub(crate) fn build_template(input: DeriveInput, mut attributes: AttributeArgs) 
 
         impl #impl_generics rusty_html::render::Render<B> for #ident #type_generics #where_clauses {
             fn render_to_buf(&self, buf: &mut B) {
+                #[allow(non_snake_case)]
                 let mut OUTPUT = buf;
                 #body_of_render_function
             }

@@ -3,9 +3,9 @@
 
 mod inline_html;
 
+mod build;
 mod grammar;
 mod helper_macros;
-mod render_function;
 mod template;
 
 use proc_macro::TokenStream;
@@ -25,3 +25,4 @@ pub fn template(attribute_stream: TokenStream, input_stream: TokenStream) -> Tok
 pub fn html(input_stream: TokenStream) -> TokenStream {
     inline_html::build_render_scope(input_stream)
 }
+

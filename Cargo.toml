@@ -1,5 +1,5 @@
 [workspace]
-members = ["macros", "frontend"]
+members = ["macros", "web", "examples/web"]
 
 [package]
 name = "rusty-html"
@@ -14,4 +14,4 @@ license = "MIT"
 inline-html = ["rusty-html-macros/inline-html"]
 
 [dependencies]
-rusty-html-macros = { path = "./macros/"}
+rusty-html-macros = { path = "macros" }
