@@ -1,6 +1,4 @@
-mod basic_types;
-mod refs_and_others;
-mod textual_types;
+mod impls;
 
 pub trait Render<T: RenderBuffer> {
     fn render_to_buf(&self, buf: &mut T);
