@@ -6,12 +6,13 @@ name = "rusty-html"
 version = "0.1.2"
 edition = "2021"
 authors = ["Michael van Straten"]
-description = "This crate allows for Jsx html inline like syntax in rust"
+description = "rusty-html is a html-templating/web framework"
 repository = "https://github.com/michaelvanstraten/rusty-html"
 license = "MIT"
 
 [features]
 inline-html = ["rusty-html-macros/inline-html"]
+web = []
 
 [dependencies]
 rusty-html-macros = { path = "macros" }

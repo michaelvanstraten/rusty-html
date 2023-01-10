@@ -1,33 +1,33 @@
 # rusty-html
 
- This crate allows for Jsx html inline like syntax in rust
+Rusty HTML is a html-templating/web(in progress) framework.
 
- ## Example
+### Example
+
 ```rust
 use rusty_html::html;
 
 fn main() {
-    let html = html! {
-        <html>
-            <head>
-            <title>Page Title</title>
-            </head>
-            <body>
-            {
-                vec!["ad", "sdf", "sdfsdf"].into_iter().map(|s| {
-                        html!{
-                            <p>{s}</p>
-                        }
-                    }
-                ).collect::<Vec<String>>()
+    let links = [
+        ("https://wikipedia.com", "Wikipedia"),
+        ("https://twitter.com", "Twitter"),
+        ("https://youtube.com", "Youtube"),
+    ];
+
+    let html = html!(
+        <div>
+        {
+            for (link, link_title) in links {
+                <a src={link}>{link_title}</a>
             }
-            <h1>sfsdf</h1>
-            <p>My first paragraph.</p>
-            </body>
-        </html>
-    };
-    println!("{}", html);
+        }
+        </div>
+    );
+
+    println!("{html}");
 }
 ```
+
+License: MIT
 
 License: MIT
