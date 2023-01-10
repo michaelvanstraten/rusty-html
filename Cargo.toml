@@ -6,7 +6,7 @@ name = "rusty-html"
 version = "0.1.2"
 edition = "2021"
 authors = ["Michael van Straten"]
-description = "rusty-html is a html-templating/web framework"
+description = "Rusty HTML is a html-templating/web framework"
 repository = "https://github.com/michaelvanstraten/rusty-html"
 license = "MIT"
 
